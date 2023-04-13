@@ -8,6 +8,17 @@ mp:
       words-out:
         topic: "words"
     incoming:
+      movies-from-kafka:
+        topic: "cinema"
+        connector: "smallrye-kafka"
+        enable:
+          auto:
+            commit: false
+        value:
+          deserializer: com.guptaji.deserializations.CinemaDeserializer
+        auto:
+          offset:
+            reset: "earliest"
       incomingTopicNameWillComeFromConfig:
         topic: "quote-data-request"
         auto:
