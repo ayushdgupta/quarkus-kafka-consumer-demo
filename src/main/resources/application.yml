@@ -1,0 +1,24 @@
+greeting:
+  message: "hello"
+mp:
+  messaging:
+    outgoing:
+      outgoingTopicNameWillComeFromConfig:
+        topic: "quotes"
+      words-out:
+        topic: "words"
+    incoming:
+      incomingTopicNameWillComeFromConfig:
+        topic: "quote-data-request"
+        auto:
+          offset:
+            reset: "earliest"
+      words-in:
+        auto:
+          offset:
+            reset: "earliest"
+        topic: "words"
+
+quarkus:
+  http:
+    port: 8087
